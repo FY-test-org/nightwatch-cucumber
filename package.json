@@ -1,0 +1,19 @@
+{
+  "name": "nightwatchdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --require cucumber.conf.js --require step-definitions"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^84.0.1",
+    "cucumber": "^6.0.5",
+    "cucumber-html-reporter": "^5.2.0",
+    "nightwatch": "^1.3.7",
+    "nightwatch-api": "^3.0.1",
+    "nightwatch-cucumber": "^9.1.3"
+  }
+}

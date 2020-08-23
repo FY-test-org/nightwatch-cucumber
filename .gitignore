@@ -1,0 +1,4 @@
+tests_output/
+Screenshots/
+node_modules/
+chromedriver.log
