@@ -1,21 +1,33 @@
 const {client} = require('nightwatch-api');
 const {Given, When, Then} = require('cucumber');
-var page = client.page.demoObjects();
+var LoginPage = client.page.demoObjects();
 
-Given('I open Simple site website', () =>{
-    console.log("GIVEN TAG")
-    return page.navigate().waitForElementVisible('body').assert.elementPresent('body');
+Given('I open Open the PlanIT Login Screen', () =>{
+    console.log("Foundation Step")
+    return LoginPage
+    .navigate()
+
 });
 
-Then("the page header is {string}", (text)=>{
-    console.log("THEN_1 TAG")
-    return page.assert.elementPresent('@header').assert.containsText('@header',text);
+When("I enter my Username", ()=>{
+    console.log("Action Step")
+    return LoginPage
+    .setValue('@Username',"")
 });
 
-Then("the button exists", ()=>{
-    console.log("THEN_2 TAG")
-    page.waitForElementPresent('@startHere').click('@startHere');
-    return page.waitForElementPresent('@headingText').assert.elementPresent('@headingText');
+When("I enter my Password", ()=>{
+    console.log("Action Step")
+    // page.waitForElementPresent('@startHere').click('@startHere');
+    // return page.waitForElementPresent('@headingText').assert.elementPresent('@headingText');
 });
 
+When("Click Subimit", ()=>{
+    console.log("Action Step")
+    // page.waitForElementPresent('@startHere').click('@startHere');
+    // return page.waitForElementPresent('@headingText').assert.elementPresent('@headingText');
+});
 
+Then("the user is should be displayed the PlanIT Dashboard Screen", ()=>{
+    console.log("Validation step")
+
+})
