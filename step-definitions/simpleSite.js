@@ -43,17 +43,17 @@ Then("the user is should be displayed the PlanIT Dashboard Screen", ()=>{
 })
 
 
-When("I enter an Incorrect Username", ()=>{
-    console.log("Action step")
+// When("I enter an Incorrect Username", ()=>{
+//     console.log("Action step")
 
-    return LoginPage
-    .setValue('@locusernameInput',"Testing1")
+//     return LoginPage
+//     .setValue('@locusernameInput',"Testing1")
 
-});
+// });
 
-When("I enter an Incorrect Password", ()=>{
-    console.log("Action step")
+// When("I enter an Incorrect Password", ()=>{
+//     console.log("Action step")
 
-    return LoginPage
-    .setValue('@locPasswordInput',"Testing1")
-});
+//     return LoginPage
+//     .setValue('@locPasswordInput',"Testing1")
+// });
