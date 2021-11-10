@@ -41,3 +41,19 @@ Then("the user is should be displayed the PlanIT Dashboard Screen", ()=>{
     .waitForElementPresent("@locPlanITSearch", 1000, false, "Dashboard Search bar is visible")
 
 })
+
+
+When("I enter an Incorrect Username", ()=>{
+    console.log("Action step")
+
+    return LoginPage
+    .setValue('@locusernameInput',"Testing1")
+
+});
+
+When("I enter an Incorrect Password", ()=>{
+    console.log("Action step")
+
+    return LoginPage
+    .setValue('@locPasswordInput',"Testing1")
+});

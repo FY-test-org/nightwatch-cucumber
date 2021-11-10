@@ -1,12 +1,9 @@
 const {client} = require('nightwatch-api');
-const {Given, When, Then} = require('cucumber');
+const {Given, When, Then,And} = require('cucumber');
 var LoginPage = client.page.LoginPage();
 var DashboardPage = client.page.DashboardPage();
 
 
-const {client} = require('nightwatch-api');
-const {Given, When, Then} = require('cucumber');
-var DashboardPage = client.page.DashboardPage();
 
 // Scenario 1 
 // Scenario 1: Ensure that the user is able to search for an exisiting products
@@ -22,7 +19,8 @@ Given('that the user is logged in and the dashboard page is displayed', () =>{
 When("I enter and Existing Project into the search bar", ()=>{
 
     return DashboardPage
-        .click()
+        .setValue("@locPlanITSearch","Sanity")
+        
 
 });
 
@@ -80,7 +78,7 @@ When("I enter my Username", ()=>{
 });
 
 
-And ("I enter my Username", ()=>{
+When("I enter my Username", ()=>{
 
     return LoginPage
     .setValue('@locusernameInput',"PlanIT-Tester-1")
