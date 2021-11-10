@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js --require cucumber.conf.js --require step-definitions",
-    "test-Dashboard": "cucumber-js --require cucumber.conf.js --require step-definitions test-Dashboard "
+    "test-Dashboard": "cucumber-js --require cucumber.conf.js --require step-definitions test-Dashboard",
+    "e2e-test": "nightwatch"
   },
   "author": "",
   "license": "ISC",
