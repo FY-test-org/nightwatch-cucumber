@@ -1,122 +1,56 @@
-// const {client} = require('nightwatch-api');
-// const {Given, When, Then,And} = require('cucumber');
-// var LoginPage = client.page.LoginPage();
-// var DashboardPage = client.page.DashboardPage();
 
+const { Given, When, Then } = require('cucumber');
 
+//// Your step definitions /////
+Given("that the user is on the  Wikipedia Homepage", function () {
+    console.log("Test")
+    return 'pending';
+});
 
-// // Scenario 1 
-// // Scenario 1: Ensure that the user is able to search for an exisiting products
+When("the user types in Item they want to search", function () {
 
-// Given('that the user is logged in and the dashboard page is displayed', () =>{
-//     console.log("Foundation Step")
-//     return DashboardPage
-//     .waitForElementPresent("@locPlanITSearch", 1000, false, "Dashboard Search bar is visible")
+    console.log("Test")
+    return 'pending';
+});
 
+When("the user clicks on {string} Option dropdown", function (arg1) {
 
-// });
+    console.log("Test")
+    return 'pending';
+});
 
-// When("I enter and Existing Project into the search bar", ()=>{
+When("the user clicks the search Icon", function () {
+    console.log("Test")
 
-//     return DashboardPage
-//         .setValue("@locPlanITSearch","Sanity")
-        
+    return 'pending';
+});
 
-// });
+Then("the user should be shown the results in that language.", function () {
+    console.log("Test")
 
-// Then("the Project should get displayed", ()=>{
-//     console.log("Validation step")
-//     return DashboardPage
-//     .waitForElementPresent("@locPlanITSearch", 1000, false, "Dashboard Search bar is visible")
+    return 'pending';
+});
 
-// })
+Given("that the user is on the  Wikipedia Homepage", function () {
+    console.log("Test")
 
+    return 'pending';
+});
 
+When("the user selects on the English language option for the drop", function () {
+    console.log("Test")
 
-// // Scenario 2
-// // Scenario 2: Ensure that the user is getting displayed an error message when then user inputs a project that doesnt exisit
+    return 'pending';
+});
 
-// Given('the dashboard page is displayed', () =>{
-//     console.log("Foundation Step")
-//     return DashboardPage
-//     .navigate()
-//     .maximizeWindow()
+When("the user types the {string} into the search field", function (arg1) {
+    console.log("Test")
 
-// });
+    return 'pending';
+});
 
-// When("I enter my Username", ()=>{
+Then("the user should be shown the result in english", function () {
+    console.log("Test")
 
-//     return DashboardPage
-//     .setValue('@locusernameInput',"PlanIT-Tester-1")
-
-// });
-
-// Then("the user is should be displayed the PlanIT Dashboard Screen", ()=>{
-//     console.log("Validation step")
-//     return DashboardPage
-//     .waitForElementPresent("@locPlanITSearch", 1000, false, "Dashboard Search bar is visible")
-
-// })
-
-
-// // Scenario 3
-
-
-// Given('the dashboard page is displayed', () =>{
-//     console.log("Foundation Step")
-//     return LoginPage
-//     .navigate()
-//     .maximizeWindow()
-
-// });
-
-// When("I enter my Username", ()=>{
-
-//     return LoginPage
-//     .setValue('@locusernameInput',"PlanIT-Tester-1")
-
-// });
-
-
-// When("I enter my Username", ()=>{
-
-//     return LoginPage
-//     .setValue('@locusernameInput',"PlanIT-Tester-1")
-
-// });
-
-// Then("the user is should be displayed the PlanIT Dashboard Screen", ()=>{
-//     console.log("Validation step")
-//     return DashboardPage
-//     .waitForElementPresent("@locPlanITSearch", 1000, false, "Dashboard Search bar is visible")
-
-// })
-
-
-
-
-
-// // Scenario 4
-
-
-// Given('the dashboard page is displayed', () =>{
-//     console.log("Foundation Step")
-//     return LoginPage
-//     .navigate()
-//     .maximizeWindow()
-
-// });
-
-// When("I enter my Username", ()=>{
-
-//     return LoginPage
-//     .setValue('@locusernameInput',"PlanIT-Tester-1")
-
-// });
-
-// Then("the user is should be displayed the PlanIT Dashboard Screen", ()=>{
-//     console.log("Validation step")
-//     return DashboardPage
-//     .waitForElementPresent("@locPlanITSearch", 1000, false, "Dashboard Search bar is visible")
-
-// })
+    return 'pending';
+});
