@@ -1,5 +1,5 @@
 const {client} = require('nightwatch-api');
-const {Given, When, Then} = require('cucumber');
+const {Given, When, Then} = require('@cucumber/cucumber');
 var page = client.page.demoObjects();
 
 Given('I open Simple site website', () =>{

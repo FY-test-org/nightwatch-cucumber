@@ -1,4 +1,4 @@
-const { setDefaultTimeout, AfterAll, BeforeAll } = require('cucumber');
+const { setDefaultTimeout, AfterAll, BeforeAll } = require('@cucumber/cucumber');
 const { createSession, closeSession, startWebDriver, stopWebDriver } = require('nightwatch-api');
 
 setDefaultTimeout(60000);
