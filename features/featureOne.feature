@@ -1,7 +1,7 @@
-Feature: Nighwatch docs search
+Feature: Navigation and Assertion
 
-Scenario: Visiting nightwatch js docs
+  Scenario: Visit Simple Site website
 
-  Given I open Simple site website
-  Then the page header is "SimpleSite.com"
-  And the button exists
+    Given I open Simple site website
+    Then the page header is "SimpleSite.com"
+    And the button exists
