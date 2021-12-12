@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require cucumber.conf.js --require step-definitions"
+    "test": "cucumber-js --require cucumber.conf.js --require step-definitions",
+    "test-demo": "nightwatch"
   },
   "author": "",
   "license": "ISC",
