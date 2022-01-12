@@ -1,9 +1,0 @@
-
-
-Feature: Feature: Searching information in multiple languages (https://wikipedia.org)
-As a user, I want to navigate to the main page of Wikipedia, so that I can perform searches in multiple languages.
-
-  Scenario Outline: 
-    Given....
-    When.....
-    Then....

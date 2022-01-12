@@ -1,0 +1,72 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Wikipedia Test Scenario Sample",
+    "line": 1,
+    "id": "wikipedia-test-scenario-sample",
+    "tags": [],
+    "uri": "features\\Wikipedia.feature",
+    "elements": [
+      {
+        "id": "wikipedia-test-scenario-sample;ensure-that-the-user-is-able-to-search-on-wikipedia.",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Ensure that the user is able to search on Wikipedia.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "that user is navigates to the WIkipedia home page",
+            "match": {
+              "location": "step-definitions\\simpleSite.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1616000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "the user types in the word cars and clicks the search button",
+            "match": {
+              "location": "step-definitions\\simpleSite.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3180000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "the user should be displayed with the cars Wikipedia page",
+            "match": {
+              "location": "step-definitions\\simpleSite.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 387000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "PlanIT\\nightwatch-cucumber\\BDD\\node_modules\\cucumber\\lib\\support_code_library_builder\\index.js:62"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -13,13 +13,15 @@ module.exports = {
         cli_args: ['--port=4444']
       },
       desiredCapabilities: {
-        browserName: 'chrome'
+        browserName: 'chrome',
+        workers:3,
+        javascriptEnabled: true,
+        acceptSslCerts: true,
       },
-      screenshots: {
-        enabled: true,
-        on_failure: true,
-        path: 'Screenshots'
-      }
+            screenshots: {
+                enabled: false,
+                path: 'OnfailScreenshots'
+            }
     }
   }
 };

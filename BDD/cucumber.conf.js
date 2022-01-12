@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const { setDefaultTimeout, After, AfterAll, BeforeAll } = require('cucumber');
 const { createSession, closeSession, startWebDriver, stopWebDriver } = require('nightwatch-api');
@@ -7,19 +8,21 @@ const attachedScreenshots = getScreenshots();
 
 function getScreenshots() {
   try {
+
     const folder = path.resolve(__dirname, 'screenshots');
 
     const screenshots = fs.readdirSync(folder).map(file => path.resolve(folder, file));
+ 
     return screenshots;
   } catch (err) {
     return [];
   }
 }
 
-setDefaultTimeout(60000);
+
 
 BeforeAll(async () => {
-  await startWebDriver({ env: process.env.NIGHTWATCH_ENV || 'chromeHeadless' });
+  await startWebDriver();
   await createSession();
 });
 
@@ -33,9 +36,14 @@ AfterAll(async () => {
       output: 'report/cucumber_report.html',
       reportSuiteAsScenarios: true,
       launchReport: true,
+      noInlineScreenshots:true,
+      scenarioTimestamp:true,
+      screenshotsDirectory: 'screenshots',
+      storeScreenshots: undefined,
       metadata: {
-        'App Version': '0.3.2',
-        'Test Environment': 'POC'
+        'Base Test Version': '0.0.1',
+        'Test Environment': 'Infotrack - Nightwatch Base Project',
+        'Product': 'Your Product name goes here'
       }
     });
   }, 0);
@@ -49,5 +57,7 @@ After(function() {
         attachedScreenshots.push(file);
         return this.attach(fs.readFileSync(file), 'image/png');
       })
+      
   );
 });
+
