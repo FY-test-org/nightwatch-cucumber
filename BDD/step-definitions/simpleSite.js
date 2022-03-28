@@ -10,7 +10,7 @@ var WikipediaPage = client.page.demoObjects();
 
 
 // Wikiepda search Items 
-Given('that user is navigates to the WIkipedia home page', () =>{
+Given('that user is navigates to the Wikipedia home page', () =>{
     console.log("Foundation Step")
     return WikipediaPage
     .navigate()

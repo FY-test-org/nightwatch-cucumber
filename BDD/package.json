@@ -21,6 +21,7 @@
     "nightwatch-cucumber": "^9.1.3"
   },
   "dependencies": {
+    "dotenv": "^7.0.0",
     "geckodriver": "^3.0.1"
   }
 }
