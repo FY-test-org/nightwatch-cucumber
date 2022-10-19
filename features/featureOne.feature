@@ -1,3 +1,4 @@
+@one
 Feature: Navigation and Assertion
 
   Scenario: Visit Simple Site website
