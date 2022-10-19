@@ -6,7 +6,7 @@ on:
       - GA_configs
 
 jobs:
-  build-and-test:
+  {matrix.job}:
     runs-on: ubuntu-latest
     strategy:
       matrix:
