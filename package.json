@@ -5,15 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js --require cucumber.conf.js --require step-definitions",
-    "test-demo": "nightwatch"
+    "test-tag": "NIGHTWATCH_ENV=chrome export TIMESTAMP=$(date +%s) && cucumber-js --require cucumber.conf.js --require step-definitions --tags $TAGS",
+    "test-demo": "nightwatch",
+    "utils": "nightwatch --require utils"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^8.0.0-rc.1",
-    "chromedriver": "100.0.0",
+    "chromedriver": "105.0.0",
     "cucumber-html-reporter": "^5.2.0",
     "nightwatch": "^1.7.13",
     "nightwatch-api": "3.0.2"
+  },
+  "dependencies": {
+    "supertest": "^6.2.3"
   }
 }
