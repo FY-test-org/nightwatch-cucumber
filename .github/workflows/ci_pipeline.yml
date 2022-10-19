@@ -13,9 +13,9 @@ jobs:
         job: [one, two]
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/setup-node
-      - uses: ./.github/actions/install-deps
+      - uses: actions/setup-node@v3
         with:
            npmAuthToken: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
+      - run: npm install
       - run: TAGS=@${{matrix.job}} npm run test-tag
       
