@@ -1,8 +1,15 @@
 @two
-Feature: Navigation and Assertion part 2
+Feature: Navigate to Features page
 
-  Scenario: Visit websitebuilder
+    Scenario: Visit Features page
+        Given I open Simple site website
+        Then the page header is "SimpleSite.com"
+        When I click on "Features" link
+        Then I am on "Features" page
 
-    Given I open websitebuilder url
-    Then the page logo is present
-    And search bar exists
+    Scenario: Validate Features page 
+        Given I am on "Features" page
+        Then I see below feature options
+            | Design, backgrounds and colours |
+            | Personal Domain Name |
+            | Your own online store |

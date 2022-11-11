@@ -1,12 +1,10 @@
-name: On push job
+name: CI
 
 on:
-  push:
-    branches:
-      - GA_configs
+  workflow_dispatch:
 
 jobs:
-  {matrix.job}:
+  test-feature:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,6 +14,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
            npmAuthToken: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
-      - run: npm install
-      - run: TAGS=@${{matrix.job}} npm run test-tag
+      - run: yarn install
+      - run: TAGS=@${{matrix.job}} yarn run test-tag
       
