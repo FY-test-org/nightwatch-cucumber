@@ -1,4 +1,4 @@
-name: On push job
+name: CI
 
 on:
   workflow_dispatch:
@@ -14,6 +14,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
            npmAuthToken: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
-      - run: npm install
-      - run: TAGS=@${{matrix.job}} npm run test-tag
+      - run: yarn install
+      - run: TAGS=@${{matrix.job}} yarn run test-tag
       
