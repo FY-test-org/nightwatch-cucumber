@@ -17,8 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
+      - run: yarn install
         with:
            npmAuthToken: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
-      - run: yarn install
-      - run: TAGS=@${{inputs.choice}} yarn run test-tag
+      - name: ${{inputs.choice}} feature
+        run: TAGS=@${{inputs.choice}} yarn run test-tag
       
