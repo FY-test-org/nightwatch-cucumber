@@ -1,9 +1,7 @@
 name: On push job
 
 on:
-  push:
-    branches:
-      - GA_configs
+  workflow_dispatch:
 
 jobs:
   {matrix.job}:
