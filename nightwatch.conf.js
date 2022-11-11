@@ -13,7 +13,17 @@ module.exports = {
         cli_args: ['--port=4444']
       },
       desiredCapabilities: {
-        browserName: 'chrome'
+        browserName: 'chrome',
+        chromeOptions: {
+          excludeSwitches: ["enable-automation"],
+          args: [
+            "headless",
+            "window-size=1920,1080",
+            "disable-gpu",
+            "start-maximized",
+            "no-sandbox",
+          ],
+        },
       },
       screenshots: {
         enabled: true,
