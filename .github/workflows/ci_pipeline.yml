@@ -19,8 +19,6 @@ jobs:
     #     job: [one, two]
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: pipeline_changes
       - uses: actions/setup-node@v3
         with:
            npmAuthToken: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
