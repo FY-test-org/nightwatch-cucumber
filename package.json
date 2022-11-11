@@ -9,7 +9,7 @@
     "test-demo": "nightwatch",
     "utils": "nightwatch --require utils"
   },
-  "author": "",
+  "author": "Satabdi Sikdar",
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^8.7.0",
