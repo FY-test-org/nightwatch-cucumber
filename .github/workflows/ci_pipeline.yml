@@ -2,18 +2,26 @@ name: CI
 
 on:
   workflow_dispatch:
+    inputs:
+      choice:
+        type: choice
+        Description: Choose test tags to trigger a feature
+        options:
+          one
+          two
+          three
 
 jobs:
   test-feature:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        job: [one, two]
+    # strategy:
+    #   matrix:
+    #     job: [one, two]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
            npmAuthToken: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
       - run: yarn install
-      - run: TAGS=@${{matrix.job}} yarn run test-tag
+      - run: TAGS=@${{inputs.choice}} yarn run test-tag
       
