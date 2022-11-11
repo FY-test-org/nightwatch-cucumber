@@ -5,18 +5,15 @@ on:
     inputs:
       choice:
         type: choice
-        Description: Choose test tags to trigger a feature
+        description: Choose test tags to trigger a feature
         options:
-          one
-          two
-          three
+        - one
+        - two
+        - three
 
 jobs:
   test-feature:
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     job: [one, two]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
