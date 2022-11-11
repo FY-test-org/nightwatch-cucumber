@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  {matrix.job}:
+  test-feature:
     runs-on: ubuntu-latest
     strategy:
       matrix:
