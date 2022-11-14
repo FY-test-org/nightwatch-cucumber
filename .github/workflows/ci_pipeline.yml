@@ -14,10 +14,12 @@ on:
 jobs:
   test-feature:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+      tags: [${{inputs.choice}}]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
       - run: yarn install
-      - name: ${{inputs.choice}} feature
-        run: TAGS=@${{inputs.choice}} yarn run test-tag
+      - run: TAGS=@${{matrix.tags}} yarn run test-tag
       
