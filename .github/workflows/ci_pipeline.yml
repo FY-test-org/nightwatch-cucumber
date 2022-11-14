@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-      tags: [${{inputs.choice}}]
+      tags: [inputs.choice]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
