@@ -4,24 +4,25 @@ on:
   workflow_dispatch:
     inputs:
       one:
-        type: String
+        type: boolean
         description: one tag
       two:
-        type: String
+        type: boolean
         description: two tag
       three:
-        type: String
+        type: boolean
         description: three tag
 jobs:
   test-feature:
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     tags: [inputs.choice]
+    strategy:
+      matrix:
+        tags: ${{ github.event.inputs }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
+      - run: echo ${{ matrix.tags }}
       - run: yarn install
-      - name: ${{ inputs.three }} feature
-        run: TAGS=@${{ inputs.three }} yarn run test-tag
+      - name: ${{ matrix.tags }} feature
+        run: TAGS=@${{ matrix.tags }} yarn run test-tag
       
