@@ -6,7 +6,6 @@ on:
       choice:
         type: boolean
         default: true
-        description: Choose test tags to trigger a feature
         options:
          - one
          - two
