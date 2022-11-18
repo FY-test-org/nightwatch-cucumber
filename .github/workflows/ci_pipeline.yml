@@ -3,7 +3,7 @@ name: CI
 on:
   workflow_dispatch:
     inputs:
-      boolean:
+      choice:
         type: boolean
         description: Make a choice
         options:
