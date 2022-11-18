@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
     inputs:
       choice:
-        type: choice
         description: Choose test tags to trigger a feature
         one:
           type: boolean
