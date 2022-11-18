@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       one:
-        type: boolean
+        type: String
         description: one tag
       two:
-        type: boolean
+        type: String
         description: two tag
       three:
-        type: boolean
+        type: String
         description: three tag
 jobs:
   test-feature:
