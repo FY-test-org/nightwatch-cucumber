@@ -2,18 +2,17 @@ name: CI
 
 on:
   workflow_dispatch:
-    inputs:     
-      one:
+    inputs:
+      boolean:
         type: boolean
-        description: One tag
-        default: true
-      two:
-        type: boolean
-        description: Two tag
-        default: true
-      three:
-        type: boolean
-        description: Three tag
+        description: True or False
+      choice:
+        type: choice
+        description: Make a choice
+        options:
+        - one
+        - two
+        - three
 jobs:
   test-feature:
     runs-on: ubuntu-latest
@@ -24,6 +23,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
       - run: yarn install
-      - name: ${{inputs.one}} feature
-        run: TAGS=@${{inputs.choice}} yarn run test-tag
+      - name: ${{ inputs.choice }} feature
+        run: TAGS=@${{ inputs.choice }} yarn run test-tag
       
