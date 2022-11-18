@@ -7,7 +7,6 @@ on:
       default: true
       description: try choosing
       choice:
-        type: choice
         options:
          - one
          - two
