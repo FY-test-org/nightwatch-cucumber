@@ -6,11 +6,10 @@ on:
       type: boolean
       default: true
       description: try choosing
-      choice:
-        options:
-         - one
-         - two
-         - three
+      options:
+        - one
+        - two
+        - three
 
 jobs:
   test-feature:
