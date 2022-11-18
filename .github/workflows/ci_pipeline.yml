@@ -2,18 +2,22 @@ name: CI
 
 on:
   workflow_dispatch:
-    inputs:     
-      one:
-        type: boolean
-        description: One tag
-        default: true
-      two:
-        type: boolean
-        description: Two tag
-        default: true
-      three:
-        type: boolean
-        description: Three tag
+    inputs:
+      choice:
+        type: choice
+        description: Choose test tags to trigger a feature
+        one:
+          type: boolean
+          description: One tag
+          default: true
+        two:
+          type: boolean
+          description: Two tag
+          default: true
+        three:
+          type: boolean
+          description: Three tag
+          default: true
 
 jobs:
   test-feature:
