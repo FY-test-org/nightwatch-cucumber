@@ -18,12 +18,13 @@ on:
 jobs:
   test-feature:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        tags: [inputs.choice]
+    # strategy:
+    #   matrix:
+    #     tags: [inputs.choice]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
       - run: yarn install
-      - run: TAGS=@${{matrix.tags}} yarn run test-tag
+      - name: ${{inputs.choice}} feature
+        run: TAGS=@${{inputs.choice}} yarn run test-tag
       
