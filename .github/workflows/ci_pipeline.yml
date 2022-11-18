@@ -7,9 +7,9 @@ on:
       default: true
       description: try choosing
       options:
-        - one
-        - two
-        - three
+      - one
+      - two
+      - three
 
 jobs:
   test-feature:
