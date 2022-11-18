@@ -10,6 +10,8 @@ on:
         - one
         - two
         - three
+      message:
+        required: true
 
 jobs:
   test-feature:
