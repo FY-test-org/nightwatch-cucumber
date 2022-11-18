@@ -3,9 +3,11 @@ name: CI
 on:
   workflow_dispatch:
     inputs:
+      type: boolean
+      default: true
+      description: try choosing
       choice:
-        type: boolean
-        default: true
+        type: choice
         options:
          - one
          - two
