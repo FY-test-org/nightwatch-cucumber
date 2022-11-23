@@ -3,27 +3,39 @@ name: CI
 on:
   workflow_dispatch:
     inputs:
-      one:
-        type: boolean
-        description: one tag
-      two:
-        type: boolean
-        description: two tag
-      three:
-        type: boolean
-        description: three tag
+      workflow:
+        type: choice
+        description: Choose an Editor feature tag
+        options:
+         - one
+         - two
+      workflow-2:
+        type: choice
+        description: Choose an Integration feature tag
+        options:
+         - two
+         - three
 jobs:
-  test-feature:
-    if: ${{ github.event.inputs == true}}
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        tags: ${{ github.event.inputs }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
-      - run: echo ${{ matrix.tags }}
       - run: yarn install
-      - name: ${{ matrix.tags }} feature
-        run: TAGS=@${{ matrix.tags }} yarn run test-tag
-      
+
+  test-feature-2:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: ${{ inputs.workflow }} feature
+        run: TAGS=@${{ inputs.workflow }} yarn run test-tag
+
+  test-feature-3:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: ${{ inputs.workflow-2 }} feature
+        run: TAGS=@${{ inputs.workflow-2 }} yarn run test-tag
+  
