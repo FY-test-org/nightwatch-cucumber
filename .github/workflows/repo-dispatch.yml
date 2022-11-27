@@ -1,0 +1,12 @@
+name: Repository dispatch
+
+on: 
+  repository_dispatch:
+    types: ["trigger test"]
+    
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
+      - run: echo ${{ github.event.client_payload.example-key }}
