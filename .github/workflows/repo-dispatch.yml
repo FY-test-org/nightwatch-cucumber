@@ -4,6 +4,8 @@ on:
   repository_dispatch:
     types: [trigger_test]
     
+permissions: write-all
+
 jobs:
   test:
     runs-on: ubuntu-latest
