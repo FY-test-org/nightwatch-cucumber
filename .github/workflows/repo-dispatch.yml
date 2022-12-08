@@ -3,11 +3,10 @@ name: Repository dispatch
 on: 
   repository_dispatch:
     types: [trigger_test]
-    
-permissions: write-all
 
 jobs:
   test:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello"
