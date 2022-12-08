@@ -2,7 +2,7 @@ name: Repository dispatch
 
 on: 
   repository_dispatch:
-    types: ["trigger-test"]
+    types: [trigger-test]
     
 jobs:
   test:
