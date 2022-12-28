@@ -7,7 +7,7 @@ on:
 jobs:
   test-feature-1:
     runs-on: ubuntu-latest
-    environment: DEVELOPMENT
+    environment: development
     env:
       TAG: ${{ secrets.FEATURE }}
       MESSAGE: ${{ secrets.DEV_MESSAGE }}
