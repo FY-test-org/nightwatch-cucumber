@@ -7,7 +7,7 @@ on:
 jobs:
   test-feature-1:
     runs-on: ubuntu-latest
-    environment: github.event.client_payload.environment
+    environment: DEVELOPMENT
     env:
       TAG: ${{ secrets.FEATURE }}
       MESSAGE: ${{ secrets.DEV_MESSAGE }}
