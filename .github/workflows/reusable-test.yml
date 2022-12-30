@@ -13,5 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: TAGS=@${{inputs.test-tag}} yarn run test-tag
+      - run: yarn install
+      - name: ${{inputs.test-tag}} feature
+        run: TAGS=@${{inputs.test-tag}} yarn run test-tag
       
