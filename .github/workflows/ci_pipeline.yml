@@ -1,8 +1,8 @@
 name: CI
 
 on:
-  schedule:
-    - cron: '*/4 * * * *'
+  # schedule:
+  #   - cron: '*/4 * * * *'  commented schedule
   workflow_dispatch:
     inputs:
       test-feature-1:
@@ -18,17 +18,17 @@ on:
         description: Choose feature tag 3
         default: false
 jobs:
-  tests:
-    if: ${{ github.event_name == 'schedule' }}
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        tags: [one, two, three]
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v2
-      - run: yarn install
-      - run: TAGS=@${{matrix.tags}} yarn run test-tag
+  # tests:
+  #   if: ${{ github.event_name == 'schedule' }}
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       tags: [one, two, three]
+  #     fail-fast: false
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - run: yarn install
+  #     - run: TAGS=@${{matrix.tags}} yarn run test-tag
   test-feature-1:
     if: ${{inputs.test-feature-1 == true}}
     uses: ./.github/workflows/reusable-test.yml
