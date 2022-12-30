@@ -19,7 +19,7 @@ on:
         default: false
 jobs:
   tests:
-    if: ${{ github.event.schedule == '*/4 * * * *' }}
+    if: ${{ github.event_name == 'schedule' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
