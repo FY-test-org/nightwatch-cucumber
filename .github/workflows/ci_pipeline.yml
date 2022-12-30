@@ -1,41 +1,49 @@
 name: CI
 
 on:
+  schedule:
+    - cron: '*/4 * * * *'
   workflow_dispatch:
     inputs:
-      workflow:
-        type: choice
-        description: Choose an Editor feature tag
-        options:
-         - one
-         - two
-      workflow-2:
-        type: choice
-        description: Choose an Integration feature tag
-        options:
-         - two
-         - three
+      test-feature-1:
+        type: boolean
+        description: Choose feature tag 1
+        default: false
+      test-feature-2:
+        type: boolean
+        description: Choose feature tag 2
+        default: false
+      test-feature-3:
+        type: boolean
+        description: Choose feature tag 3
+        default: false
 jobs:
-  build:
+  tests:
+    if: ${{ github.event_name == 'schedule' }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        tags: [one, two, three]
+      fail-fast: false
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
       - run: yarn install
+      - run: TAGS=@${{matrix.tags}} yarn run test-tag
+  test-feature-1:
+    if: ${{inputs.test-feature-1 == true}}
+    uses: ./.github/workflows/reusable-test.yml
+    with:
+      test-tag: one
 
   test-feature-2:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: ${{ inputs.workflow }} feature
-        run: TAGS=@${{ inputs.workflow }} yarn run test-tag
+    if: ${{inputs.test-feature-2 == true}}
+    uses: ./.github/workflows/reusable-test.yml
+    with:
+      test-tag: two
 
   test-feature-3:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: ${{ inputs.workflow-2 }} feature
-        run: TAGS=@${{ inputs.workflow-2 }} yarn run test-tag
+    if: ${{inputs.test-feature-3 == true}}
+    uses: ./.github/workflows/reusable-test.yml
+    with:
+      test-tag: three
   
