@@ -1,9 +1,7 @@
 name: PR event on every commit and label
 
 on: 
-  push:
   pull_request:
-    types: [labeled, synchronize]
 
 jobs:
   test:
@@ -11,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo ${{ github.event.label.name }}
+      - run: echo ${{ github.event.labels.name }}
       - run: yarn install
       - run: TAGS=@one yarn run test-tag
