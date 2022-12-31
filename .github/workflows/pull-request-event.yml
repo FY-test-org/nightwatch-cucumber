@@ -10,5 +10,6 @@ jobs:
     if: ${{ github.event.label.name == 'run-tests' }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: yarn install
       - run: TAGS=@one yarn run test-tag
