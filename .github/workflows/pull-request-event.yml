@@ -1,6 +1,7 @@
 name: PR event on every commit and label
 
 on: 
+  push:
   pull_request:
     types: [labeled, synchronize]
 
