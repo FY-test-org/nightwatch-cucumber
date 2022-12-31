@@ -1,9 +1,9 @@
 name: PR event
 
-on:
+on: 
+  push:
   pull_request:
-    types:
-      - labeled
+    types: [labeled]
 
 jobs:
   test:
