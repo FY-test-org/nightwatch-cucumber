@@ -1,4 +1,4 @@
-name: PR event
+name: PR event on every commit and label
 
 on: 
   push:
