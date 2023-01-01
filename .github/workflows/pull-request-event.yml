@@ -1,4 +1,4 @@
-name: PR event on every commit and label
+name: Pull request event
 
 on: 
   pull_request:
