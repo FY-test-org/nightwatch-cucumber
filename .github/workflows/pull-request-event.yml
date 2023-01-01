@@ -5,10 +5,16 @@ on:
 
 jobs:
   test:
-    #if: ${{ github.event.label.name == 'run-tests' }}
+    if: ${{ github.event.label.name == 'run-tests' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo ${{ github.event.labels }}
       - run: yarn install
       - run: TAGS=@one yarn run test-tag
+
+  test-2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn install
+      - run: TAGS=@two yarn run test-tag
