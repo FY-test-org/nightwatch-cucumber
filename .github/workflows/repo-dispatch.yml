@@ -1,8 +1,8 @@
-name: Repository dispatch
+name: Repository dispatch on ${{ github.event.client_payload.environment }}
 
 on: 
   repository_dispatch:
-    types: [trigger_test]
+    types: ["${{ github.event.event_type }}-trigger_test"]
 
 jobs:
   test-feature-1:
@@ -15,8 +15,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Check environments
         run: echo ${{ github.event.client_payload.release-version }}
-      - name: Debugging with ssh
-        uses: lhotari/action-upterm@v1
 
   # test-feature-2:
   #   runs-on: ubuntu-latest
