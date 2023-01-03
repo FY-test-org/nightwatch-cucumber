@@ -2,7 +2,7 @@ name: Repository dispatch
 
 on: 
   repository_dispatch:
-    types: [github.event.client_payload.service-trigger_test]
+    types: ["${{ github.event.client_payload.service }}-trigger_test"]
 
 jobs:
   test-feature-1:
