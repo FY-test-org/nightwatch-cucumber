@@ -2,7 +2,7 @@ name: Repository dispatch
 
 on: 
   repository_dispatch:
-    types: ${{ github.event.client_payload.service }}
+    types: repo-dispatch
 
 jobs:
   # test-feature-1:
@@ -45,6 +45,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
+      - name: Check environments
+        run: echo ${{ github.event.client_payload.service }}
       - run: yarn install
       - name: ${{matrix.tags}} feature
         run: TAGS=@${{matrix.tags}} yarn run test-tag
