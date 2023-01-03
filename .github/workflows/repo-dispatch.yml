@@ -36,7 +36,7 @@ jobs:
   #       run: TAGS=@three yarn run test-tag
 
   regression-test:
-    if: ${{ github.event.client_payload.service == "dispatch" }}
+    if: ${{ github.event.client_payload.service == 'dispatch' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
