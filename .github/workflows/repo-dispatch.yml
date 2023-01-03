@@ -2,7 +2,7 @@ name: Repository dispatch
 
 on: 
   repository_dispatch:
-    types: [repo-dispatch]
+    type: github.event.action
 
 jobs:
   test-feature-1:
