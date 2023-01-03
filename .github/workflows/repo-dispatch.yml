@@ -1,4 +1,4 @@
-name: Repository dispatch on ${{ github.event.client_payload.environment }}
+name: Repository dispatch 
 
 on: 
   repository_dispatch:
