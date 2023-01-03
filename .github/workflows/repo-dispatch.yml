@@ -2,7 +2,7 @@ name: Repository dispatch
 
 on: 
   repository_dispatch:
-    types: [github.event.event_type]
+    types: ${{ github.event.event_type }}
 
 jobs:
   # test-feature-1:
