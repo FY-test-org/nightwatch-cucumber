@@ -2,19 +2,19 @@ name: Repository dispatch
 
 on: 
   repository_dispatch:
-    types: ${{ github.event.event_type }}
+    types: [repo-dispatch]
 
 jobs:
-  # test-feature-1:
-  #   runs-on: ubuntu-latest
-  #   environment: ${{ github.event.client_payload.environment }}
-  #   env:
-  #     TAG: ${{ secrets.FEATURE }}
-  #     MESSAGE: ${{ secrets.DEV_MESSAGE }}
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Check environments
-  #       run: echo ${{ github.event.client_payload.service }}
+  test-feature-1:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.client_payload.environment }}
+    env:
+      TAG: ${{ secrets.FEATURE }}
+      MESSAGE: ${{ secrets.DEV_MESSAGE }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check environments
+        run: echo ${{ github.event.client_payload.service }}
 
   # test-feature-2:
   #   runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
   #       run: TAGS=@three yarn run test-tag
 
   regression-test:
-    if: ${{ github.event.client_payload.service == "repo-dispatch" }}
+    if: ${{ github.event.client_payload.service == "dispatch" }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
