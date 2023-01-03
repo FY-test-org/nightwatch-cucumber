@@ -13,7 +13,7 @@ jobs:
       MESSAGE: ${{ secrets.DEV_MESSAGE }}
     steps:
       - uses: actions/checkout@v2
-      - name: Check environments
+      - name: Execute ${{ github.event.client_payload.service }} regression tests
         run: echo ${{ github.event.action }}
 
   # test-feature-2:
