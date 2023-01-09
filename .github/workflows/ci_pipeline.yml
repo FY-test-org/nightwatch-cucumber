@@ -2,7 +2,7 @@ name: CI
 
 on:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
     inputs:
       test-feature-1:
@@ -26,7 +26,6 @@ jobs:
         tags: [one, two, three]
       fail-fast: false
     with:
-      ref: master
       test-tag: ${{matrix.tags}}
   
   test-feature-1:
