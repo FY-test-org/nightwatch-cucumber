@@ -36,7 +36,7 @@ jobs:
   #       run: TAGS=@three yarn run test-tag
 
   regression-test:
-    if: ${{ github.event.client_payload.service == 'dispatch' }}
+    if: ${{ github.event.client_payload.service == 'dispatch' &&  github.event.action == 'regression-test' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -49,5 +49,4 @@ jobs:
         run: echo ${{ github.event.action }}
       - run: yarn install
       - name: ${{ github.event.client_payload.service }} regression tests
-        run: Execute tests on ${{ github.event.client_payload.release-version }} version in ${{ github.event.client_payload.environment }}
-      - run: TAGS=@${{matrix.tags}} yarn run test-tag
+        run: TAGS=@${{matrix.tags}} yarn run test-tag
