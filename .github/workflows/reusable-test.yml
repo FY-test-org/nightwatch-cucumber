@@ -22,6 +22,6 @@ jobs:
         with:
           status: ${{ job.status }}
           notify_when: 'failure'
-          notification_title: 'Regression test tag - ${{inputs.test-tag}} has failed'
+          notification_title: 'Regression test tag - " ${{inputs.test-tag}} " has failed'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_AUTOMATION_TEST_WEBHOOK_URL }}
