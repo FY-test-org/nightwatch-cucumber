@@ -25,6 +25,7 @@ jobs:
         tags: [one, two, three]
       fail-fast: false
     uses: ./.github/workflows/reusable-test.yml
+    secrets: inherit
     with:
       test-tag: ${{matrix.tags}}
   
