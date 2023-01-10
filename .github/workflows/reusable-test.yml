@@ -6,7 +6,7 @@ on:
       test-tag:
         type: string
         required: true
-        description: Choose a test tag
+        description: Runs a test tag
 
 jobs:
   tests:

@@ -20,11 +20,11 @@ on:
 jobs:
   scheduled-tests:
     if: ${{ github.event_name == 'schedule' }}
-    uses: ./.github/workflows/reusable-test.yml
     strategy:
       matrix:
         tags: [one, two, three]
       fail-fast: false
+    uses: ./.github/workflows/reusable-test.yml
     with:
       test-tag: ${{matrix.tags}}
   
