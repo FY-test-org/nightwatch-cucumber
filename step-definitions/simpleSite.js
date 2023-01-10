@@ -9,13 +9,12 @@ Given('I open Simple site website', () =>{
 
 Then("the page header is {string}", (text)=>{
     console.log("THEN_1 TAG")
-    return page.assert.elementPresent('@header').assert.containsText('@header',text);
+    return page.assert.elementPresent('@header').assert.titleContains(text);
 });
 
 Then("the button exists", ()=>{
     console.log("THEN_2 TAG")
-    page.waitForElementPresent('@startHere').click('@startHere');
-    return page.waitForElementPresent('@headingText').assert.elementPresent('@headingText');
+    return page.waitForElementPresent('@searchButton').assert.elementPresent('@searchButton');
 });
 
 When("I click on {string} link", async option=>{

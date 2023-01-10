@@ -16,4 +16,12 @@ jobs:
       - run: yarn install
       - name: ${{inputs.test-tag}} feature
         run: TAGS=@${{inputs.test-tag}} yarn run test-tag
-      
+      - name: Report Status to Slack channel
+        if: always()
+        uses: ravsamhq/notify-slack-action@master
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_AUTOMATION_TEST_WEBHOOK_URL }}
+        with:
+          status: ${{ job.status }}
+          notify_when: 'failure'
+          notification_title: 'Regression test tag - ${{inputs.test-tag}} has failed'
