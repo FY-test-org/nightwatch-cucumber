@@ -17,11 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: echo ${{inputs.event}}
+      - run: google-chrome --version
       - run: yarn install
       - name: ${{inputs.test-tag}} feature
         run: TAGS=@${{inputs.test-tag}} yarn run test-tag
       - name: Report Status to Slack channel
-        if: always() && ${{inputs.event == 'schedule' }}
+        if: always() && ${{ inputs.event == 'schedule' }}
         uses: ravsamhq/notify-slack-action@master
         with:
           status: ${{ job.status }}

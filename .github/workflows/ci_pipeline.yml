@@ -28,7 +28,7 @@ jobs:
     secrets: inherit
     with:
       test-tag: ${{matrix.tags}}
-      event: github.event_name
+      event: ${{github.event_name}}
   
   test-feature-1:
     if: ${{inputs.test-feature-1 == true}}
