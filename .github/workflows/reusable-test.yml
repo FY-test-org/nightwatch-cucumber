@@ -7,6 +7,10 @@ on:
         type: string
         required: true
         description: Runs a test tag
+      event:
+        type: string
+        required: false
+        description: github event
 
 jobs:
   tests:
@@ -17,7 +21,7 @@ jobs:
       - name: ${{inputs.test-tag}} feature
         run: TAGS=@${{inputs.test-tag}} yarn run test-tag
       - name: Report Status to Slack channel
-        if: always()
+        if: always() && ${{inputs.event == 'schedule' }}
         uses: ravsamhq/notify-slack-action@master
         with:
           status: ${{ job.status }}

@@ -1,8 +1,8 @@
 name: CI
 
 on:
-  # schedule:
-  #   - cron: '*/5 * * * *'
+  schedule:
+    - cron: '*/5 * * * *'
   workflow_dispatch:
     inputs:
       test-feature-1:
@@ -28,6 +28,7 @@ jobs:
     secrets: inherit
     with:
       test-tag: ${{matrix.tags}}
+      event: github.event_name
   
   test-feature-1:
     if: ${{inputs.test-feature-1 == true}}
