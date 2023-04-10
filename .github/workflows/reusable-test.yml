@@ -24,6 +24,8 @@ jobs:
       - run: echo ${{inputs.event}}
       - run: google-chrome --version
       - run: yarn install
+      - name: Debugging with ssh
+        uses: lhotari/action-upterm@v1
       - name: ${{inputs.test-tag}} feature
         run: TAGS=@${{inputs.test-tag}} yarn run test-tag
       - name: Report Status to Slack channel
