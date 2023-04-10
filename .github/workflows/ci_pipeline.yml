@@ -33,18 +33,21 @@ jobs:
   test-feature-1:
     if: ${{inputs.test-feature-1 == true}}
     uses: ./.github/workflows/reusable-test.yml
+    secrets: inherit
     with:
       test-tag: one
 
   test-feature-2:
     if: ${{inputs.test-feature-2 == true}}
     uses: ./.github/workflows/reusable-test.yml
+    secrets: inherit
     with:
       test-tag: two
 
   test-feature-3:
     if: ${{inputs.test-feature-3 == true}}
     uses: ./.github/workflows/reusable-test.yml
+    secrets: inherit
     with:
       test-tag: three
   
