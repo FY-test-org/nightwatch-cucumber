@@ -3,12 +3,14 @@ const {Given, When, Then} = require('@cucumber/cucumber');
 var page = client.page.demoObjects();
 
 Given('I open Simple site website', () =>{
-    console.log("GIVEN TAG")
+    console.log("GIVEN TAG");
+    console.log("SECRET :::::: ", process.env.REPO_KEY);
     return page.navigate().waitForElementVisible('body').assert.elementPresent('body');
 });
 
 Then("the page header is {string}", (text)=>{
-    console.log("THEN_1 TAG")
+    console.log("THEN_1 TAG");
+    console.log(" SECRET 2 ::::::: ", process.env.DEV_MESSAGE);
     return page.assert.elementPresent('@header').assert.titleContains(text);
 });
 
