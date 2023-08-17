@@ -51,4 +51,11 @@ jobs:
     secrets: inherit
     with:
       test-tag: three
+    
+  pr-test-event:
+    if: ${{ github.event_name == 'pull_request' }}
+    uses: ./.github/workflows/reusable-test.yml
+    secrets: inherit
+    with:
+      test-tag: one
   
