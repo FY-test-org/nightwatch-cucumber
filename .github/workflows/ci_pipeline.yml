@@ -58,6 +58,4 @@ jobs:
     secrets: inherit
     with:
       test-tag: one
-      event: ${{github.event_name}}
-
   
