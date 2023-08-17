@@ -1,5 +1,5 @@
 @one
-Feature: Navigation and Assertion
+Feature: Simple Navigation and Assertion
 
   Scenario: Visit Simple Site website
 
