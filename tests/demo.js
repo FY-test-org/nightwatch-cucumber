@@ -3,7 +3,6 @@
 //const selector = require('../pageObjects/demoObjects.js');
 
 module.exports = {
-
   'Testing': function(browser)
   {
     var page = browser.page.demoObjects();

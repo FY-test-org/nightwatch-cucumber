@@ -12,7 +12,4 @@ module.exports = {
           selector:`//h1[contains(text(),'Create')]`,
             locateStrategy: 'xpath'}
     }
-    
-    //locateStrategy: async function (selector) { return await selector.startsWith('/') ? 'xpath' : 'css selector'; }
-    
 }
