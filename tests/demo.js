@@ -1,7 +1,6 @@
 
 //const client  = require('nightwatch-api');
 //const selector = require('../pageObjects/demoObjects.js');
-
 module.exports = {
 
   'Testing': function(browser)
